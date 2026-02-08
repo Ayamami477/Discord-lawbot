@@ -15,14 +15,14 @@ PUBLIC_KEY = os.getenv("DISCORD_PUBLIC_KEY")
 BASE_URL = " https://laws.e-gov.go.jp/api/2"
 
 async def get_lawdata(law_id,article_num):
-     params = {'title': 'lawtitle', 'id': 'law_revision_id'}
+    params = {'title': 'lawtitle', 'id': 'law_revision_id'}
     
 async with httpx.AsyncClient() as client:
         r = await client.get(BASE_URL)
         data = r.json()
-      law_name = data.law_title
-      law_id   = data.law_revision_id
-    httpx.AsyncClient(timeout=10.0)
+        law_name = data.law_title
+        law_id   = data.law_revision_id
+        httpx.AsyncClient(timeout=10.0)
 LAW_MASTER = {
     "労働基準法": "",
     "労働契約法": "",
